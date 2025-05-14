@@ -30,7 +30,6 @@ jobs:
 
       - name: Upload HTML report
         if: always()
-        uses: actions/upload-artifact@v3
-        with:
+        uses: actions/upload-artifact@9b4961e8579d62ac50e75e1bbf8946c65de1e8f0  # Securely pins to a specific commit SHA
           name: playwright-report
           path: playwright-report
