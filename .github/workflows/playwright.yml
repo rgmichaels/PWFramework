@@ -27,9 +27,12 @@ jobs:
 
       - name: Run tests
         run: npm run test
-
+        
       - name: Upload HTML report
         if: always()
-        uses: actions/upload-artifact@9b4961e8579d62ac50e75e1bbf8946c65de1e8f0  # Securely pins to a specific commit SHA
+        uses: actions/upload-artifact@9b4961e8579d62ac50e75e1bbf8946c65de1e8f0
+        with:
           name: playwright-report
           path: playwright-report
+
+
