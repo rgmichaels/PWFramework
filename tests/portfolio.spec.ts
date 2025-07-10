@@ -1,13 +1,25 @@
-// tests/portfolio.spec.ts
-import { test, expect } from '@playwright/test';
-import { PortfolioPage } from '../pages/portfolioPage';
+// features/step-definitions/portfolioSteps.ts
+import { Given, Then } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+import { page } from '../../support/hooks';
 
-test('Portfolio site loads and displays key info', async ({ page }) => {
-  const portfolio = new PortfolioPage(page);
+Given('I navigate to the portfolio site', async () => {
+  await page.goto('https://rgmichaels.github.io/portfolio/');
+});
 
-  await portfolio.goto();
-  await portfolio.expectNameVisible();
-  await portfolio.expectTitleVisible();
-  await portfolio.expectGitHubLink();
-  await portfolio.expectResumeLink();
+Then('I should see the name {string}', async (name: string) => {
+  await expect(page.getByRole('heading', { name })).toBeVisible();
+});
+
+Then('I should see a {string} link', async (linkText: string) => {
+  await expect(page.getByRole('link', { name: new RegExp(linkText, 'i') })).toBeVisible();
+});
+Then('the GitHub link should point to {string}', async (url: string) => {
+  const link = page.getByRole('link', { name: 'GitHub', exact: true });
+  await expect(link).toHaveAttribute('href', url);
+});
+
+Then('the Resume link should point to {string}', async (url: string) => {
+  const link = page.getByRole('link', { name: /Resume/i });
+  await expect(link).toHaveAttribute('href', url);
 });
