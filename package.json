@@ -5,8 +5,13 @@
   "scripts": {
     "test:headed": "npx playwright test --headed",
     "test:debug": "npx playwright test --debug",
+<<<<<<< HEAD
     "test": "npx @cucumber/cucumber",
     "test": "cucumber-js"
+=======
+    "test:e2e": "npx cucumber-js"
+
+>>>>>>> origin/main
   },
   "keywords": [],
   "author": "",
@@ -45,3 +50,4 @@
   },
   "homepage": "https://github.com/rgmichaels/PWFramework#readme"
 }
+
