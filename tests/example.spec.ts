@@ -11,3 +11,4 @@ test('example with logging', async ({ page }) => {
   log('Asserting title');
   await home.assertTitleContains('Example Domain');
 });
+ 
