@@ -6,7 +6,9 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "outDir": "dist",
-    "rootDir": "./tests"
+    "rootDir": "./tests",
+    "skipLibCheck": true
+
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
