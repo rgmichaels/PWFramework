@@ -1,24 +1,16 @@
 {
-  "name": "pwframework",
+  "name": "pw-cucumber-ts",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx @cucumber/cucumber",
     "test:headed": "npx playwright test --headed",
-    "test:debug": "npx playwright test --debug",
-    "test:e2e": "npx cucumber-js"
-
+    "test:debug": "npx playwright test --debug"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@cucumber/cucumber": "^11.3.0",
-    "@playwright/test": "^1.52.0",
-    "playwright": "^1.52.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.54.0",
+    "playwright": "^1.43.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   }
 }
-

@@ -1,4 +1,11 @@
+<<<<<<< Updated upstream
 // features/step-definitions/portfolioSteps.ts
+=======
+// tests/portfolio.spec.ts
+import { test, expect } from '@playwright/test';
+import { PortfolioPage } from '../pages/portfolioPage';
+
+>>>>>>> Stashed changes
 import { Given, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { page } from '../../support/hooks';
@@ -7,6 +14,12 @@ Given('I navigate to the portfolio site', async () => {
   await page.goto('https://rgmichaels.github.io/portfolio/');
 });
 
+<<<<<<< Updated upstream
+=======
+Given('I navigate to the portfolio site', async () => {
+  await page().goto('https://rgmichaels.github.io/portfolio/');
+
+>>>>>>> Stashed changes
 Then('I should see the name {string}', async (name: string) => {
   await expect(page.getByRole('heading', { name })).toBeVisible();
 });

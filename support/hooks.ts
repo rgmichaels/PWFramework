@@ -1,4 +1,3 @@
-// support/hooks.ts
 import { Before, After, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium, Browser, Page } from 'playwright';
 
@@ -16,3 +15,4 @@ Before(async () => {
 After(async () => {
   await browser.close();
 });
+
